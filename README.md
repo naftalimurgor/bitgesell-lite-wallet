@@ -33,6 +33,11 @@ const wallet = new Wallet({
   }
 })
 
+// or privateKey
+const wallet = new Wallet({
+  privateKey: process.env.PRIVATE_KEY
+})
+
 const liteWallet = await wallet.createWallet()
 
 console.log(liteWallet)
@@ -95,7 +100,7 @@ To run the test suite:
 ```bash
 npm test
 ```
-
+Contributions are welcome!
 ## License
 
 MIT
