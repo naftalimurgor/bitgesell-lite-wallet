@@ -5,7 +5,7 @@ import jsbgl from '@naftalimurgor/jsbgl'
  * Singleton class for creating a transaction object.
  */
 export class Transaction {
-  public static DEFAULT_BGL_FEE = 0.001 // default fee of 10,000 satoshis
+  public static DEFAULT_BGL_FEE = 0.0001 // default fee of 10,000 satoshis
   private static txInstance: Transaction
   private constructor() {
     this._initJsbglModule()
