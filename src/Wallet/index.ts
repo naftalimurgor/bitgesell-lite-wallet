@@ -361,8 +361,8 @@ export class Wallet {
     const data = await this._getBglAddressBalance(from)
     const balance = data.balance
     // already converted to Sats
-
-    let newBalance = (balance - toSatoshiUnits(value)) - fee
+    const _value = toSatoshiUnits(value)
+    let newBalance = (balance - _value - fee)
     if (utxos.length) {
       for (const key in utxos) {
         const utxo = utxos[key]
@@ -379,6 +379,7 @@ export class Wallet {
       })
 
       if (newBalance > 0) {
+        console.log(newBalance);
 
         txObject.addOutput({
           value: newBalance,
@@ -404,7 +405,7 @@ export class Wallet {
   }
 
 
-  public async _broadcastbglTransaction(txObject: Record<string, string>) {
+  public async _broadcastbglTransaction(txObject: string) {
     const url = new URL(this.rpc)
     const payload = {
       method: 'POST',
@@ -422,7 +423,7 @@ export class Wallet {
         body: payload.body
       })
 
-      return res.json()
+      return await res.text()
 
     } catch (error) {
       return { error: `${error}` }
