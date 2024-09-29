@@ -1,7 +1,7 @@
 # Bitgesell Lite Wallet
 <img src="Icon.png" style="height: 60px;"/>
 
-A light weight Bitgesell Wallet. For a comprehensive and full fledged, please visit [Official Wallet](https://app.bglwallet.io/)
+A light weight Bitgesell Wallet. For a comprehensive Bitgesell Wallet, please visit [Official Wallet](https://app.bglwallet.io/)
 ## Installation
 
 ```bash
@@ -103,5 +103,6 @@ npm test
 Contributions are welcome!
 ## License
 
+```
 MIT
 ```
